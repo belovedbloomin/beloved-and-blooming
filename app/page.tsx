@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const GUMROAD_URL = "https://belovedblooming.gumroad.com/l/Raising-Confident-Kids?wanted=true"; // Update with your actual Gumroad link
+const GUMROAD_URL = "https://belovedblooming.gumroad.com/l/Raising-Confident-Kids"; // Update with your actual Gumroad link
 
 export default function Home() {
   return (
