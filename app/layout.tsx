@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Fraunces, Merriweather, Merriweather_Sans } from "next/font/google";
 import "./globals.css";
@@ -37,3 +38,10 @@ export default function RootLayout({
     </html>
   );
 }
+<html lang="en">
+  <body>
+    {children}
+  </body>
+
+  <GoogleAnalytics gaId="G-L24LYKD6WM" />
+</html>
