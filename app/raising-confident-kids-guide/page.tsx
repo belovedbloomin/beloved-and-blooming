@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const GUMROAD_URL = "https://belovedblooming.gumroad.com/l/Raising-Confident-Kids"; // Update with your actual Gumroad link
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FAF5EA] text-[#2C3E2B] font-merriweather selection:bg-[#DCEBD3] relative">
+    <div className="min-h-screen bg-[#FAF5EA] text-[#2C3E2B] font-merriweather selection:bg-[#DCEBD3] relative pb-20 sm:pb-0">
 
       {/* Full-page fixed botanical background */}
       <div className="fixed inset-0 w-full h-full -z-0 opacity-35">
@@ -140,7 +141,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-  </div> {/* <-- This was the missing closing div! */}
+  </div>
 
   <a
     href={GUMROAD_URL}
@@ -152,7 +153,7 @@ export default function Home() {
   </a>
 </section>
 
-        {/* AGITATE */}
+{/* AGITATE */}
 <section className="w-full max-w-2xl mb-16">
   <div className="bg-[#4A7043] rounded-3xl p-8 sm:p-10 text-center">
     <p className="font-merriweather text-lg sm:text-xl text-[#FAF5EA] font-medium leading-relaxed">
@@ -163,6 +164,7 @@ export default function Home() {
     </p>
   </div>
 </section>
+
 {/* INSIDE THE GUIDE */}
 <section className="w-full max-w-4xl mb-20">
   <h2 className="font-merriweather-serif text-3xl sm:text-4xl text-[#4A7043] text-center">
@@ -170,7 +172,7 @@ export default function Home() {
   </h2>
 
   <p className="font-merriweather text-center text-[#5A6E59] mt-3 mb-10 max-w-2xl mx-auto">
-    Practical guidance for the everyday moments that quietly shape your child's confidence.
+    Practical guidance for the everyday moments that quietly shape your child&apos;s confidence.
   </p>
 
   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -244,22 +246,22 @@ export default function Home() {
   </div>
 </section>
 
-        {/* ROOTED IN RESEARCH */}
-        <section className="w-full max-w-2xl mb-16 flex flex-col sm:flex-row items-center gap-8 bg-[#F3ECDD] rounded-3xl p-8 sm:p-10">
-          <div className="w-24 h-48 shrink-0 relative">
-            <Image src="/images/rooted-in-research-fixed4.png" alt="" fill className="object-contain" />
-          </div>
-          <div>
-            <h2 className="font-merriweather-serif text-2xl text-[#4A7043] mb-3">
-              Rooted in Research.
-            </h2>
-            <p className="font-merriweather text-sm sm:text-base text-[#5A6E59] leading-relaxed">
-              Every chapter is grounded in real psychological research, contingent self-worth, rupture and repair, toxic stress, authoritative versus authoritarian parenting, explained in plain language, not clinical jargon.
-            </p>
-          </div>
-        </section>
+{/* ROOTED IN RESEARCH */}
+<section className="w-full max-w-2xl mb-16 flex flex-col sm:flex-row items-center gap-8 bg-[#F3ECDD] rounded-3xl p-8 sm:p-10">
+  <div className="w-24 h-48 shrink-0 relative">
+    <Image src="/images/rooted-in-research-fixed4.png" alt="" fill className="object-contain" />
+  </div>
+  <div>
+    <h2 className="font-merriweather-serif text-2xl text-[#4A7043] mb-3">
+      Rooted in Research.
+    </h2>
+    <p className="font-merriweather text-sm sm:text-base text-[#5A6E59] leading-relaxed">
+      Every chapter is grounded in real psychological research, contingent self-worth, rupture and repair, toxic stress, authoritative versus authoritarian parenting, explained in plain language, not clinical jargon.
+    </p>
+  </div>
+</section>
 
-        {/* FEATURE ICON ROW */}
+{/* FEATURE ICON ROW */}
 <section className="w-full max-w-2xl mb-16 grid grid-cols-3 gap-4 text-center">
   <div className="flex flex-col items-center gap-2">
     <div className="w-14 h-14 rounded-full border border-[#4A7043]/20 flex items-center justify-center">
@@ -334,10 +336,41 @@ export default function Home() {
 
       </main>
 
+      {/* FOOTER */}
+      <footer className="max-w-4xl mx-auto px-6 mb-24 sm:mb-8 pt-8 border-t border-[#DCEBD3]/80 flex flex-col items-center gap-4 text-xs text-[#5A6E59]/80 relative z-10">
+        <div className="relative w-28 h-8 opacity-85">
+          <Image
+            src="/icons/favicon.svg"
+            alt="Beloved & Blooming"
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        <p className="text-center">
+          &copy; {new Date().getFullYear()} Beloved & Blooming. All rights reserved.
+        </p>
+
+        <nav className="flex items-center gap-6">
+          <Link 
+            href="/privacy" 
+            className="hover:text-[#4A7043] underline underline-offset-2 transition-colors"
+          >
+            Privacy Policy
+          </Link>
+          <Link 
+            href="/contact" 
+            className="hover:text-[#4A7043] underline underline-offset-2 transition-colors"
+          >
+            Contact
+          </Link>
+        </nav>
+      </footer>
+
       {/* MOBILE STICKY CTA */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 p-4 bg-[#FAF5EA]/90 backdrop-blur-md border-t border-[#4A7043]/10 z-50 flex justify-center">
-        
-          <a href={GUMROAD_URL}
+        <a 
+          href={GUMROAD_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full bg-[#4A7043] text-white font-semibold py-3.5 rounded-full shadow-lg text-center text-base"
@@ -345,7 +378,6 @@ export default function Home() {
           Get the Guide — $23.99
         </a>
       </div>
-
     </div>
   );
 }
