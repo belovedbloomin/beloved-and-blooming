@@ -366,7 +366,7 @@ export default function Home() {
 
         <nav className="flex items-center gap-6">
           <Link 
-            href="/privacy" 
+            href="/privacy-policy" 
             className="hover:text-[#4A7043] underline underline-offset-2 transition-colors"
           >
             Privacy Policy
