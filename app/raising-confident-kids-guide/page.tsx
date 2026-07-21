@@ -5,7 +5,7 @@ const GUMROAD_URL = "https://belovedblooming.gumroad.com/l/Raising-Confident-Kid
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FAF5EA] text-[#2C3E2B] font-merriweather selection:bg-[#DCEBD3] relative pb-20 sm:pb-0">
+    <div className="min-h-screen bg-[#FAF5EA] text-[#2C3E2B] font-merriweather selection:bg-[#DCEBD3] relative pb-20 sm:pb-12">
 
       {/* Full-page fixed botanical background */}
       <div className="fixed inset-0 w-full h-full -z-0 opacity-35">
@@ -19,6 +19,19 @@ export default function Home() {
       </div>
 
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-20 flex flex-col items-center relative z-10">
+
+  {/* Favicon */}
+  <header className="w-full flex flex-col items-center text-center">
+    <div className="relative w-44 h-16 sm:w-52 sm:h-20 mb-6 sm:mb-8">
+      <Image
+        src="/icons/favicon.svg"
+        alt="Beloved & Blooming"
+        fill
+        className="object-contain"
+        priority
+      />
+    </div>
+  </header>
 
 {/* HERO */}
 <section className="w-full flex flex-col items-center text-center pt-4 pb-10 sm:pt-8 sm:pb-16">
