@@ -34,14 +34,11 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${merriweather.variable} ${merriweatherSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+      </body>
+
+      <GoogleAnalytics gaId="G-L24LYKD6WM" />
     </html>
   );
 }
-<html lang="en">
-  <body>
-    {children}
-  </body>
-
-  <GoogleAnalytics gaId="G-L24LYKD6WM" />
-</html>
