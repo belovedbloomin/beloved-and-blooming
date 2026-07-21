@@ -1,0 +1,28 @@
+<svg width="140" height="420" viewBox="0 0 140 420" xmlns="http://www.w3.org/2000/svg">
+  <title>Tall vine sprig</title>
+  <path d="M70 410 C60 340 80 300 65 240 C50 180 85 140 70 70 C60 40 75 20 70 5"
+        stroke="#4A7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Leaf pair 1 -->
+  <path d="M66 340 C40 335 25 315 30 290 C55 296 68 316 66 340 Z" fill="#5C8A52"/>
+  <path d="M64 350 C90 344 104 322 98 297 C74 304 62 326 64 350 Z" fill="#4A7043"/>
+
+  <!-- Leaf pair 2 -->
+  <path d="M64 250 C38 246 22 227 26 202 C51 207 65 227 64 250 Z" fill="#4A7043"/>
+  <path d="M66 258 C92 252 106 231 101 206 C77 212 65 234 66 258 Z" fill="#5C8A52"/>
+
+  <!-- Leaf pair 3 -->
+  <path d="M68 150 C44 145 30 127 34 104 C57 109 70 128 68 150 Z" fill="#5C8A52"/>
+  <path d="M70 158 C94 152 107 132 103 108 C81 114 69 135 70 158 Z" fill="#4A7043"/>
+
+  <!-- Small berries -->
+  <circle cx="34" cy="288" r="5" fill="#E8B4B8"/>
+  <circle cx="96" cy="204" r="4.5" fill="#E8B4B8"/>
+  <circle cx="38" cy="100" r="4" fill="#E8B4B8"/>
+
+  <!-- Top bud -->
+  <path d="M70 60 C62 56 58 46 62 36 C72 40 76 52 70 60 Z" fill="#5C8A52"/>
+  <path d="M70 55 C78 51 82 41 78 31 C68 35 64 47 70 55 Z" fill="#4A7043"/>
+  <circle cx="70" cy="18" r="6" fill="#E8B4B8"/>
+  <circle cx="70" cy="18" r="2.5" fill="#F7E4C7"/>
+</svg>

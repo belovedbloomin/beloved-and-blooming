@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 58.5 58.5"
+   version="1.1"
+   id="svg1"
+   width="58.5"
+   height="58.5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <circle
+     cx="29.25"
+     cy="29.25"
+     r="28"
+     fill="none"
+     stroke="#6f7f73"
+     stroke-width="2.5"
+     id="circle1" />
+  <path
+     d="m 43.447659,15.588101 c -14,2 -25.438367,8.652158 -23.438367,20.652158 12.6658,3.414825 21.438367,-6.652158 23.438367,-20.652158 C 33.452861,31.824773 17.884591,32.415149 15.05234,42.911898"
+     fill="none"
+     stroke="#6f7f73"
+     stroke-width="2.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path1"
+     style="stroke-width:1;stroke-dasharray:none" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+     d="M 32.454161,27.710338 Z"
+     id="path2" />
+</svg>

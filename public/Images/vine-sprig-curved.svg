@@ -1,0 +1,22 @@
+<svg width="320" height="150" viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+  <title>Curved vine sprig</title>
+  <path d="M10 130 C60 110 80 80 130 90 C180 100 200 60 260 50 C285 46 300 30 310 15"
+        stroke="#4A7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Leaf cluster 1 -->
+  <path d="M75 100 C68 76 82 58 106 56 C108 80 96 100 75 100 Z" fill="#5C8A52"/>
+  <path d="M83 108 C76 130 90 150 114 150 C114 128 104 108 83 108 Z" fill="#4A7043"/>
+
+  <!-- Leaf cluster 2 -->
+  <path d="M185 78 C178 54 192 36 216 34 C218 58 206 78 185 78 Z" fill="#4A7043"/>
+  <path d="M193 84 C186 62 198 42 220 38 C224 60 214 80 193 84 Z" fill="#5C8A52"/>
+
+  <!-- Berries -->
+  <circle cx="108" cy="60" r="4.5" fill="#E8B4B8"/>
+  <circle cx="222" cy="42" r="4" fill="#E8B4B8"/>
+  <circle cx="270" cy="34" r="4.5" fill="#E8B4B8"/>
+
+  <!-- End bud -->
+  <path d="M304 22 C297 16 296 6 302 0 C310 6 312 18 304 22 Z" fill="#5C8A52"/>
+  <circle cx="313" cy="8" r="5" fill="#E8B4B8"/>
+</svg>
