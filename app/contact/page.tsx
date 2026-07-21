@@ -6,10 +6,34 @@ import React, { useState } from 'react';
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    // Paste your Web3Forms access key here:
+    formData.append("access_key", "38ba449b-5e4b-4a1e-8a5c-2e62f992dfe4");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please check your connection.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -63,6 +87,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   required
                   className="w-full px-4 py-3 rounded-lg border border-[#DCEBD3] bg-[#FAF5EA]/40 text-[#5A6E59] focus:outline-none focus:ring-2 focus:ring-[#4A7043] transition"
                 />
@@ -74,6 +99,7 @@ export default function ContactPage() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   required
                   className="w-full px-4 py-3 rounded-lg border border-[#DCEBD3] bg-[#FAF5EA]/40 text-[#5A6E59] focus:outline-none focus:ring-2 focus:ring-[#4A7043] transition"
                 />
@@ -84,6 +110,7 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg border border-[#DCEBD3] bg-[#FAF5EA]/40 text-[#5A6E59] focus:outline-none focus:ring-2 focus:ring-[#4A7043] transition resize-none"
@@ -91,9 +118,10 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="mt-4 w-full py-4 px-6 rounded-lg bg-[#4A7043] hover:bg-[#3d5c37] active:bg-[#324b2d] text-white font-medium text-base transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A7043]"
+                disabled={isLoading}
+                className="mt-4 w-full py-4 px-6 rounded-lg bg-[#4A7043] hover:bg-[#3d5c37] active:bg-[#324b2d] text-white font-medium text-base transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A7043] disabled:opacity-50"
               >
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
             </form>
           )}

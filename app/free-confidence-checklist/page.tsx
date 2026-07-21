@@ -8,11 +8,34 @@ export default function LandingPage() {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Added loading state
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
-    setIsSubmitted(true);
+
+    setIsLoading(true);
+
+    try {
+      // Connects to the Next.js API route we will create in Step 3
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name: firstName }), // Passes email and name to backend
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('An error occurred. Please check your connection.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -51,7 +74,6 @@ export default function LandingPage() {
             A free printable checklist with eight simple activities you can naturally weave into your week to help build confidence through everyday moments.
           </p>
         </header>
-
 
         {/* SECTION 2: Checklist Preview Mockup (Landscape) */}
         <section className="mt-6 sm:mt-8 w-full flex justify-center">
@@ -171,9 +193,10 @@ export default function LandingPage() {
 
               <button
                 type="submit"
-                className="mt-2 w-full py-4 px-6 rounded-lg bg-[#4A7043] hover:bg-[#3d5c37] active:bg-[#324b2d] text-white font-medium text-base transition-colors duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A7043]"
+                disabled={isLoading}
+                className="mt-2 w-full py-4 px-6 rounded-lg bg-[#4A7043] hover:bg-[#3d5c37] active:bg-[#324b2d] text-white font-medium text-base transition-colors duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A7043] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Me the Free Checklist
+                {isLoading ? 'Sending...' : 'Send Me the Free Checklist'}
               </button>
 
               <p className="text-center text-xs text-[#5A6E59]/80 mt-1">
